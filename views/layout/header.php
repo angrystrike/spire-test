@@ -10,13 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
   <!-- Custom Assets -->
-  <link href="<?php echo ASSETS_PATH . 'css/global.css'; ?>">
+  <link rel="stylesheet" href="<?php echo ASSETS_PATH . 'css/global.css'; ?>">
   <script src="<?php echo ASSETS_PATH . 'js/global.js'; ?>"></script>
-
 </head>
 <body>
-
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1><?php appName(); ?></h1>
-</div>
-

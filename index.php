@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Spire test</title>
-</head>
+<?php require_once 'start.php'; ?>
 
-<body>
+<?php
+$address = new Address(1);
+?>
 
-<h1 class="fst-italic"><?php echo '123' ?></h1>
-
-<script src="js/main.js"></script>
-</body>
-</html>
+<?php require_once LAYOUT_PATH . 'header.php'; ?>
+<?php require_once VIEWS_PATH . 'home.php'; ?>
+<?php require_once VIEWS_PATH . 'modal.php'; ?>
+<?php require_once LAYOUT_PATH . 'footer.php'; ?>

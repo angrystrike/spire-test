@@ -11,12 +11,12 @@
         <p>Which address format do you want to save?</p>
         <ul class="modal-nav nav nav-pills mb-3" id="pills-tab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+            <a class="nav-link active" data-tab='original' id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
               ORIGINAL
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+            <a class="nav-link" data-tab='modified' id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
               STANDARDIZED (USPS)
             </a>
           </li>

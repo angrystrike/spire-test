@@ -8,7 +8,6 @@ class Address {
 
     public function __construct($addressId = null) {
         $this->_db = Database::getInstance();
-        $this->_sessionName = Config::get('session/session_name');
 
         if ($addressId) {
             $this->find($addressId);

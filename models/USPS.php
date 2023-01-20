@@ -1,27 +1,13 @@
 <?php
 
 require_once '../core/Helpers.php';
-require_once '../core/Config.php';
+// require_once '../core/Config.php';
 
 class USPS {
-    private $_db;
-    private $_data;
-    private $_sessionName;
-
-    public function __construct() {
-        $this->_db = Database::getInstance();
-        $this->_sessionName = Config::get('session/session_name');
-    }
-
-    public function data()
-    {
-        return $this->_data;
-    }
-    
     public static function formatAddress($addressData) {
         $curl = curl_init();
         $url = 'http://production.shippingapis.com/ShippingAPI.dll?API=Verify&XML=';
-        $userName = Config::get('app/usps_username');
+        // $userName = Config::get('app/usps_username');
 
         $xml = "<AddressValidateRequest USERID='955GOLDE1085'><Address ID='0'><Address1>{$addressData['address1']}</Address1><Address2>{$addressData['address2']}</Address2><City>{$addressData['city']}</City><State>{$addressData['state']}</State><Zip5>{$addressData['zipcode']}</Zip5><Zip4></Zip4></Address></AddressValidateRequest>";
         $xml = encodeURIComponent($xml);

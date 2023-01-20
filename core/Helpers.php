@@ -13,6 +13,7 @@ function encodeURIComponent($string)
 
 function autoload($class_name)
 {
+    // echo(is_file('core/' . $class_name . '.php'));
     if (is_file('core/' . $class_name . '.php'))
     {
         require_once 'core/' . $class_name . '.php';

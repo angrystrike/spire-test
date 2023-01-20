@@ -1,26 +1,29 @@
 <?php
 
-var_dump($_POST);
+//require_once '../models/Address.php';
+// var_dump($_POST);
 
-// function encodeURIComponent($str) {
-//     $revert = array('%21'=>'!', '%2A'=>'*', '%27'=>"'", '%28'=>'(', '%29'=>')');
-//     return strtr(rawurlencode($str), $revert);
-// }
+$address = new Address();
 
-// //$xml = '<AddressValidateRequest USERID="955GOLDE1085"><AddressID="0"><Address1></Address1><Address2>6406 Ivy Lane</Address2><City>Greenbelt</City><State>MD</State><Zip5></Zip5><Zip4></Zip4></AddressID=></AddressValidateRequest>';
+try {
+    $address->create(
+        array(
+            'address_line_1' => $_POST['address1'],
+            'address_line_2' => $_POST['address2'],
+            'city' => $_POST['city'],
+            'state' => $_POST['state'],
+            'zipcode' => $_POST['zipcode']
+        )
+    );
 
-// $url = 'http://production.shippingapis.com/ShippingAPI.dll?API=Verify&XML=' . encodeURIComponent($xml);
-// // $url = 'http://production.shippingapis.com/ShippingAPI.dll?API=Verify&XML=<AddressValidateRequest USERID="955GOLDE1085"><AddressID="0"><Address1></Address1><Address2>6406 Ivy Lane</Address2><City>Greenbelt</City><State>MD</State><Zip5></Zip5><Zip4></Zip4></AddressID=></AddressValidateRequest>';
-// // Initializes a new cURL session
-// $curl = curl_init($url);
-// curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-// $response = curl_exec($curl);
-// // Close cURL session
-// curl_close($curl);
-// echo $response . PHP_EOL;
-//$response = file_get_contents('http://production.shippingapis.com/ShippingAPI.dll?API=Verify&XML='.urlencode($xml));
-
-//$response = new SimpleXMLElement($response);
-
-//echo ($response);
+    echo json_encode(array(
+        'success' => true,
+        'data' => 'Address saved successfully!'
+    ));
+} 
+catch (Exception $ex) {
+    echo json_encode(array(
+        'success' => false,
+        'data' => 'Error: ' . $ex
+    ));
+}

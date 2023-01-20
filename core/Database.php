@@ -11,13 +11,20 @@ class Database
 
     private function __construct()
     {
+        //$test = Config::get('mysql/host');
+        $dbName = Config::get('mysql/db_name');
+        $host = Config::get('mysql/host');
+        $username = Config::get('mysql/username');
+        $password = Config::get('mysql/password');
+        echo 'password' . $password;
         try
         {
-        $this->_pdo = new PDO('mysql:host='.Config::get('mysql/host').';'.
-                                'dbname='.Config::get('mysql/db_name'),
-                                Config::get('mysql/username'),
-                                Config::get('mysql/password')
-            );
+            // $this->_pdo = new PDO('mysql:host='.Config::get('mysql/host').';'.
+            //                         'dbname='.Config::get('mysql/db_name'),
+            //                         Config::get('mysql/username'),
+            //                         Config::get('mysql/password')
+            $this->_pdo = new PDO("mysql:dbname={$dbName};host={$host}", $username, $password);
+            //$this->_pdo = new PDO('mysql:dbname=spire;host=127.0.0.1', 'spire', 'spire');
         }
         catch(PDOException $e)
         {

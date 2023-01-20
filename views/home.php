@@ -10,44 +10,44 @@ $states = require_once 'states_list.php';
           <h5 class="text-dark">Address Validator</h5>
           <h6 class="text-secondary">Validate / Standardizes addresses using USPS</h6>
           <hr />
+          <form onsubmit="event.preventDefault(); addressSubmit()">
+            <div class="form-group">
+              <label for="address_line_1" class="text-secondary">Address Line 1</label>
+              <input type="text" class="form-control" required id="address_line_1" placeholder="Enter address line 1">
+            </div>
 
-          <div class="form-group">
-            <label for="address_line_1" class="text-secondary">Address Line 1</label>
-            <input type="text" class="form-control" required id="address_line_1" placeholder="Enter address line 1">
-          </div>
+            <div class="form-group">
+              <label for="address_line_2" class="text-secondary">Address Line 2</label>
+              <input type="text" class="form-control" id="address_line_2" placeholder="Enter address line 2">
+            </div>
 
-          <div class="form-group">
-            <label for="address_line_2" class="text-secondary">Address Line 2</label>
-            <input type="text" class="form-control" id="address_line_2" placeholder="Enter address line 2">
-          </div>
+            <div class="form-group">
+              <label for="city" class="text-secondary">City</label>
+              <input type="text" required class="form-control" id="city" placeholder="Enter city">
+            </div>
 
-          <div class="form-group">
-            <label for="city" class="text-secondary">City</label>
-            <input type="text" required class="form-control" id="city" placeholder="Enter city">
-          </div>
+            <div class="form-group">
+              <label for="state" class="text-secondary">State</label>
+              <select class="form-control" required id="state">
+                <option value="" selected disabled hidden>Choose state</option>
+                <?php foreach ($states as $state): ?>
+                    <option value="<?= $state ?>"> <?= $state ?> </option>
+                <?php endforeach; ?>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <label for="state" class="text-secondary">State</label>
-            <select class="form-control" required id="state">
-              <option value="" selected disabled hidden>Choose state</option>
-              <?php foreach ($states as $state): ?>
-                  <option value="<?= $state ?>"> <?= $state ?> </option>
-              <?php endforeach; ?>
-            </select>
-          </div>
+            <div class="form-group">
+              <label for="zipcode" class="text-secondary">Zip Code</label>
+              <input type="text" class="form-control" id="zipcode" required placeholder="Enter Zip Code">
+            </div>
 
-          <div class="form-group">
-            <label for="zipcode" class="text-secondary">Zip Code</label>
-            <input type="text" class="form-control" id="zipcode" required placeholder="Enter Zip Code">
-          </div>
-
-          <button 
-            type="button"
-            onclick="addressSubmit()"
-            class="btn btn-primary d-flex mx-auto shadow-sm"
-          >
-            VALIDATE
-          </button>
+            <button 
+              type="submit"           
+              class="btn btn-primary d-flex mx-auto shadow-sm"
+            >
+              VALIDATE
+            </button>
+          </form>
 
           <div id="error-message" class="mt-3 alert alert-danger d-none" role="alert">
           </div>

@@ -33,7 +33,7 @@ function saveAddress() {
     }
 }
 
-function addressSubmit(e) {
+function addressSubmit() {
     const address1 = document.getElementById('address_line_1').value || 'Suite 6100';
     const address2 = document.getElementById('address_line_2').value || '185 Berry St';
     const city = document.getElementById('city').value ||  'San Francisco';

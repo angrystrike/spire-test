@@ -4,6 +4,7 @@ $GLOBALS['config'] = array(
     
     'app' => array(
         'name'          => 'Spire App',
+        'usps_username' => '955GOLDE1085'
     ),
 
     'mysql' => array(
@@ -17,3 +18,5 @@ $GLOBALS['config'] = array(
         'session_name'  => 'spire',
     ),
 );
+
+var_dump($GLOBALS['config']);

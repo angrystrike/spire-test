@@ -13,8 +13,4 @@ $GLOBALS['config'] = array(
         'password'      => 'spire',
         'db_name'        => 'spire'
     ),
-    
-    'session'   => array(
-        'session_name'  => 'spire',
-    ),
 );

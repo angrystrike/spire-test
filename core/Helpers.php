@@ -38,19 +38,4 @@ function appName()
     echo Config::get('app/name');
 }
 
-function array_walk_keys($array, $parentKey = null, &$flattened_array = null)
-{
-    if(!is_array($array))
-        return $array;
-    
-    foreach( $array as $key => $val ) {
-        $flattenedKeysArray[] = $key;
-        
-        if(is_array($val))
-            array_walk_keys($val, $key, $flattenedKeysArray);
-    }
-
-    return $flattenedKeysArray;
-}
-
 

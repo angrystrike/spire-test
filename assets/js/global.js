@@ -34,19 +34,17 @@ function saveAddress() {
 }
 
 function addressSubmit() {
-    const address1 = document.getElementById('address_line_1').value || 'Suite 6100';
-    const address2 = document.getElementById('address_line_2').value || '185 Berry St';
-    const city = document.getElementById('city').value ||  'San Francisco';
-    const state = document.getElementById('state').value ||  'CA';
-    const zipcode = document.getElementById('zipcode').value ||  '94556';
+    const address1 = document.getElementById('address_line_1').value;
+    const address2 = document.getElementById('address_line_2').value;
+    const city = document.getElementById('city').value;
+    const state = document.getElementById('state').value;
+    const zipcode = document.getElementById('zipcode').value;
 
     var xmlhttp = new XMLHttpRequest();
     
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            console.log('xmlhttp.responseText', xmlhttp.responseText);
             let response = JSON.parse(xmlhttp.responseText)
-            console.log('response', response);
             let errorBlock = document.getElementById('error-message');
             let data = response.data;
             if (response.success) {
@@ -54,7 +52,6 @@ function addressSubmit() {
                 const originalAddress = `Address Line 1: ${address1} \nAddress Line 2: ${address2}\nCity: ${city}\nState: ${state}\nZipcode: ${zipcode}`;
                 const modifiedAddress = `Address Line 1: ${data.address1} \nAddress Line 2: ${data.address2}\nCity: ${data.city}\nState: ${data.state}\nZipcode: ${data.zip5}`;
                 
-                console.log('DATA', data);
                 modifiedData.append('address1', data.address1);
                 modifiedData.append('address2', data.address2);
                 modifiedData.append('city', data.city);
@@ -63,7 +60,6 @@ function addressSubmit() {
                 
                 document.getElementById('originalAddress').value = originalAddress;
                 document.getElementById('modifiedAddress').value = modifiedAddress;
-                console.log('response', response);
                 errorBlock.classList.add('d-none');
             } else {
                 console.log('xmlhttp.responseText', response.data);

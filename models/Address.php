@@ -4,7 +4,6 @@ class Address {
     public $_tableName = 'addresses';
     private $_db;
     private $_data;
-    private $_sessionName;
 
     public function __construct($addressId = null) {
         $this->_db = Database::getInstance();
@@ -31,14 +30,6 @@ class Address {
                 $this->_data = $data->first();
                 return true;
             }
-        }
-    }
-
-    public function update($fields = array(), $id = null)
-    {
-        if (!$this->_db->update($this->_tableName, $id, $fields))
-        {
-            throw new Exception('Unable to update the address.');
         }
     }
 

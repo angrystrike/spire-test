@@ -23,15 +23,11 @@ class USPS {
         $response = curl_exec($curl);
 
         curl_close($curl);
-        // echo $response;
 
         $xml = simplexml_load_string($response, "SimpleXMLElement", LIBXML_NOCDATA);
         $json = json_encode($xml);
         $array = json_decode($json, TRUE);
 
-        //print("<pre>".print_r($array,true)."</pre>");
-
-        // print_r($array['Address']['Error']['Description']);
         $data = $array['Address'];
 
         if (array_key_exists('Error', $data)) {

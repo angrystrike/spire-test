@@ -29,6 +29,7 @@ $states = require_once 'states_list.php';
           <div class="form-group">
             <label for="state" class="text-secondary">State</label>
             <select class="form-control" required id="state">
+              <option value="" selected disabled hidden>Choose state</option>
               <?php foreach ($states as $state): ?>
                   <option value="<?= $state ?>"> <?= $state ?> </option>
               <?php endforeach; ?>
@@ -41,7 +42,7 @@ $states = require_once 'states_list.php';
           </div>
 
           <button 
-            type="submit"
+            type="button"
             onclick="addressSubmit()"
             class="btn btn-primary d-flex mx-auto shadow-sm"
           >

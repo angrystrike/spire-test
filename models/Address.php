@@ -36,7 +36,6 @@ class Address {
 
     public function update($fields = array(), $id = null)
     {
-
         if (!$this->_db->update($this->_tableName, $id, $fields))
         {
             throw new Exception('Unable to update the address.');

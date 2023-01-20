@@ -29,10 +29,14 @@
             <textarea class="form-control bg-white font-monospace" id="modifiedAddress" rows="5" readonly>321</textarea>
           </div>
         </div>
+      
+        <div id="success-message" class="mt-3 alert alert-success d-none" role="alert">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" onclick="saveAddress()" class="btn btn-primary shadow-sm">Save</button>
       </div>
+
     </div>
   </div>
 </div>

@@ -11,6 +11,6 @@
 
   <!-- Custom Assets -->
   <link rel="stylesheet" href="<?php echo ASSETS_PATH . 'css/global.css'; ?>">
-  <script src="<?php echo ASSETS_PATH . 'js/global.js'; ?>"></script>
+  <script src="<?php echo ASSETS_PATH . 'js/global.js?'.time(); ?>"></script>
 </head>
 <body>

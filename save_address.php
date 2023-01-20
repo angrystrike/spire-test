@@ -1,8 +1,6 @@
+<?php require_once 'start.php'; ?>
+
 <?php
-
-//require_once '../models/Address.php';
-// var_dump($_POST);
-
 $address = new Address();
 
 try {

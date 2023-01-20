@@ -1,4 +1,7 @@
 <?php
+function ifset($var, $key, $default='') {
+    return (is_array($var) && isset($var[$key])) ? $var[$key] : $default;
+}
 
 function escape($string)
 {
